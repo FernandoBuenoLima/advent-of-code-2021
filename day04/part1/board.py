@@ -1,3 +1,4 @@
+MARKED = -1
 
 class Board:
     def __init__(self, input):
@@ -7,19 +8,19 @@ class Board:
         for i in range(5):
             for j in range(5):
                 if self.numbers[i][j] == number:
-                    self.numbers[i][j] = -1
+                    self.numbers[i][j] = MARKED
                     return True
         return False
 
     def row_win(self, row):
         for n in row:
-            if n != -1:
+            if n != MARKED:
                 return False
         return True
 
     def col_win(self, i):
         for row in self.numbers:
-            if row[i] != -1:
+            if row[i] != MARKED:
                 return False
         return True
 
@@ -36,6 +37,6 @@ class Board:
         acc = 0
         for row in self.numbers:
             for n in row:
-                if n != -1:
+                if n != MARKED:
                     acc += n
-        return acc 
+        return acc
