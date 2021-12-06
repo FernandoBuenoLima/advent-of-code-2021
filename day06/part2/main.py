@@ -33,6 +33,6 @@ for i in range(256):
 acc = 0
 
 for f in d:
-    acc += d[f]
+    acc += d[f] #Yes, Mr. Camping, add the fish number, you've got it this time
 
 print(acc)
